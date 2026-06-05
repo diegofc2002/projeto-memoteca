@@ -105,6 +105,5 @@
       "autoria": "Star Wars",
       "id": "lm6RW19PrwY"
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }
