@@ -14,7 +14,24 @@ let user_interface = {
 
     try {
       const pensamentos = await api.buscarPensamentos();
-      pensamentos.forEach(user_interface.adicionarPensamentoNaLista);
+
+      if (pensamentos.length == 0) {
+        // criação de uma constante "mensagem", caso não haja nenhum pensamento cadastrado no projeto
+        const mensagem_vazia = document.createElement("p");
+        mensagem_vazia.textContent =
+          "Nada por aqui ainda, que tal compartilhar alguma ideia?";
+        lista_pensamentos.appendChild(mensagem_vazia);
+        mensagem_vazia.classList.add("lista-vazia-mensagem");
+
+        // criação da imagem de uma gaveta vazia - quando não há pensamentos
+        const imagem_sem_pensamentos = document.createElement("img");
+        imagem_sem_pensamentos.src = "img/lista-vazia.png";
+        imagem_sem_pensamentos.alt = "Gaveta vazia";
+        lista_pensamentos.appendChild(imagem_sem_pensamentos);
+        imagem_sem_pensamentos.classList.add("lista-vazia-imagem");
+      } else {
+        pensamentos.forEach(user_interface.adicionarPensamentoNaLista);
+      }
     } catch (error) {
       alert("Erro ao renderizar pensamentos.");
     }

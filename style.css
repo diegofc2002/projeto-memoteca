@@ -288,3 +288,15 @@ span {
   background: #041832;
   margin: 96px 0 48px 0;
 }
+
+.lista-vazia-mensagem,
+.lista-vazia-imagem {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.lista-vazia-imagem {
+  max-width: 120px;
+  margin: 0 auto;
+}
