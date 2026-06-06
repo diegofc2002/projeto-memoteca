@@ -1,4 +1,19 @@
 {
-  "pensamentos": [],
-  "$schema": "./node_modules/json-server/schema.json"
+  "pensamentos": [
+    {
+      "conteudo": "I'll be back",
+      "autoria": "O Exterminador do Futuro",
+      "id": "V5UqXbMbevY"
+    },
+    {
+      "conteudo": "Meu nome é Bond, James Bond",
+      "autoria": "007",
+      "id": "RqpPHmk-6vo"
+    },
+    {
+      "conteudo": "May the Force be with you",
+      "autoria": "Star Wars",
+      "id": "mQ5h5bPfGl0"
+    }
+  ]
 }

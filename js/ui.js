@@ -20,8 +20,8 @@ let user_interface = {
         const mensagem_vazia = document.createElement("p");
         mensagem_vazia.textContent =
           "Nada por aqui ainda, que tal compartilhar alguma ideia?";
-        lista_pensamentos.appendChild(mensagem_vazia);
         mensagem_vazia.classList.add("lista-vazia-mensagem");
+        lista_pensamentos.appendChild(mensagem_vazia);
 
         // criação da imagem de uma gaveta vazia - quando não há pensamentos
         const imagem_sem_pensamentos = document.createElement("img");

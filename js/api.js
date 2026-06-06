@@ -5,7 +5,7 @@ let api = {
     try {
       let response = await fetch(`${url_base}/pensamentos`);
       return await response.json();
-    } catch {
+    } catch (error) {
       alert("Erro ao buscar pensamentos!");
       throw error;
     }
@@ -21,7 +21,7 @@ let api = {
         body: JSON.stringify(pensamento),
       });
       return await response.json();
-    } catch {
+    } catch (error) {
       alert("Erro ao salvar pensamento!");
       throw error;
     }
@@ -31,7 +31,7 @@ let api = {
     try {
       let response = await fetch(`${url_base}/pensamentos/${id}`);
       return await response.json();
-    } catch {
+    } catch (error) {
       alert("Erro ao buscar pensamento!");
       throw error;
     }
@@ -47,7 +47,7 @@ let api = {
         body: JSON.stringify(pensamento),
       });
       return await response.json();
-    } catch {
+    } catch (error) {
       alert("Erro ao editar pensamento!");
       throw error;
     }
@@ -58,7 +58,7 @@ let api = {
       let response = await fetch(`${url_base}/pensamentos/${id}`, {
         method: "DELETE",
       });
-    } catch {
+    } catch (error) {
       alert("Erro ao excluir pensamento!");
       throw error;
     }
