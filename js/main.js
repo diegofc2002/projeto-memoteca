@@ -20,7 +20,12 @@ async function manipularSubmissaoDoFormulario(event) {
   const autoria = document.getElementById("pensamento-autoria").value;
 
   try {
-    await api.salvarPensamento({ conteudo, autoria });
+    // caso haja um id, queremos editar o pensamento; senão, salvamos o pensamento
+    if (id) {
+      await api.editarPensamento({ id, conteudo, autoria });
+    } else {
+      await api.salvarPensamento({ conteudo, autoria });
+    }
     user_interface.renderizarPensamentos();
   } catch (error) {
     alert("Erro ao salvar o pensamento.");

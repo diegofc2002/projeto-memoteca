@@ -20,7 +20,47 @@ let api = {
       });
       return await response.json();
     } catch {
-      alert("Erro ao buscar pensamentos!");
+      alert("Erro ao salvar pensamento!");
+      throw error;
+    }
+  },
+
+  async buscarPensamentoPorId(id) {
+    try {
+      let response = await fetch(`http://localhost:3000/pensamentos/${id}`);
+      return await response.json();
+    } catch {
+      alert("Erro ao buscar pensamento!");
+      throw error;
+    }
+  },
+
+  async editarPensamento(pensamento) {
+    try {
+      let response = await fetch(
+        `http://localhost:3000/pensamentos/${pensamento.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(pensamento),
+        },
+      );
+      return await response.json();
+    } catch {
+      alert("Erro ao editar pensamento!");
+      throw error;
+    }
+  },
+
+  async excluirPensamento(id) {
+    try {
+      let response = await fetch(`http://localhost:3000/pensamentos/${id}`, {
+        method: "DELETE",
+      });
+    } catch {
+      alert("Erro ao excluir pensamento!");
       throw error;
     }
   },
